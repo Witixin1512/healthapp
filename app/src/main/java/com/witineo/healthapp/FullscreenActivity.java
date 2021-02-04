@@ -20,6 +20,10 @@ public class FullscreenActivity extends AppCompatActivity {
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
     private static final boolean AUTO_HIDE = true;
+    // Llista del que fer.
+    //Afegir GUIs
+    //Afegir més activitats que no siguin full pantalla completa
+    //Evitar NPE's
 
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
