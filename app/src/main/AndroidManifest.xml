@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.witineo.healthapp">
+    package="com.witineo.healthapp"
+    >
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Healthapp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".video1"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_video1"
+            android:label="MainActivity"
             android:theme="@style/Theme.MyApplication.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +22,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FullscreenActivity"
+            android:name="com.witineo.healthapp.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
+            android:label="Healthapp"
             android:theme="@style/Theme.MyApplication.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +32,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Healthapp"
+            android:theme="@style/Theme.MyApplication.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
