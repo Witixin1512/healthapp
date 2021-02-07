@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.witineo.healthapp"
     android:versionCode="1"
-    android:versionName="1.0"
-    package="com.witineo.healthapp">
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"
+        tools:ignore="WrongManifestParent" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"
+        tools:ignore="WrongManifestParent" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="Healthapp"
-        android:theme="@drawable/ic_launcher_background"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:theme="@drawable/ic_launcher_background">
 
-        >
 
-        <!-- This name is resolved to com.example.myapp.MainActivity
-             based upon the package attribute android:theme="AppTheme" -->
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Video Player"
+            android:theme="@drawable/ic_launcher_background">
+        </activity>
+
         <activity
             android:name=".MainActivity"
-            android:theme="@drawable/download">
+            android:theme="@drawable/download"
+            tools:ignore="WrongManifestParent" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".SecondActivity"
-            android:parentActivityName=".MainActivity" />
-    </application>
+        android:name=".SecondActivity"
+        android:parentActivityName=".MainActivity"
+        tools:ignore="WrongManifestParent" />
+        </application>
 </manifest>
