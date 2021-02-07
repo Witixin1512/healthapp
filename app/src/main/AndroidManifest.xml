@@ -1,42 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.witineo.healthapp"
-    >
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="com.witineo.healthapp">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Healthapp"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Healthapp"
+        android:theme="@drawable/ic_launcher_background"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
-        <activity
-            android:name=".video1"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="MainActivity"
-            android:theme="@style/Theme.MyApplication.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.witineo.healthapp.MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="Healthapp"
-            android:theme="@style/Theme.MyApplication.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- This name is resolved to com.example.myapp.MainActivity
+             based upon the package attribute android:theme="AppTheme" -->
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="Healthapp"
-            android:theme="@style/Theme.MyApplication.Fullscreen">
+            android:theme="@drawable/download">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +29,8 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SecondActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
-
 </manifest>
