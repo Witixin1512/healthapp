@@ -12,7 +12,7 @@
         tools:ignore="WrongManifestParent" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="Healthapp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -24,22 +24,27 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Video Player"
             android:theme="@drawable/ic_launcher_background">
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:theme="@drawable/download"
-            tools:ignore="WrongManifestParent" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <activity
+
+            android:name=".MainActivity"
+            android:theme="@drawable/download"
+            tools:ignore="WrongManifestParent" >
+
+
         </activity>
 
         <activity
         android:name=".SecondActivity"
         android:parentActivityName=".MainActivity"
         tools:ignore="WrongManifestParent" />
+
         </application>
+
 </manifest>
