@@ -6,10 +6,13 @@
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"
+    <uses-permission
+        android:name="android.permission.DISABLE_KEYGUARD"
         tools:ignore="WrongManifestParent" />
-    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"
+    <uses-permission
+        android:name="android.permission.USE_FULL_SCREEN_INTENT"
         tools:ignore="WrongManifestParent" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -17,34 +20,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@drawable/ic_launcher_background">
-
-
         <activity
-            android:name=".FullscreenActivity"
+            android:name=".video1"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_video1"
+            android:theme="@drawable/ic_launcher_background">
+        </activity>
+        <activity
+            android:name=".Initial"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Video Player"
             android:theme="@drawable/ic_launcher_background">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
-
             android:name=".MainActivity"
             android:theme="@drawable/download"
-            tools:ignore="WrongManifestParent" >
-
-
-        </activity>
-
-        <activity
-        android:name=".SecondActivity"
-        android:parentActivityName=".MainActivity"
-        tools:ignore="WrongManifestParent" />
-
-        </application>
+            tools:ignore="WrongManifestParent">
+            </activity>
+    </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.witineo.healthapp;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class FullscreenActivity extends Activity {
+public class Initial extends Activity {
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;
@@ -38,7 +39,7 @@ public class FullscreenActivity extends Activity {
             if (actionBar != null) {
                 actionBar.show();
             }
-            mControlsView.setVisibility(View.VISIBLE);
+
         }
     };
     private boolean mVisible;
@@ -66,19 +67,7 @@ public class FullscreenActivity extends Activity {
             return false;
         }
     };
-//@Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//    }
-//    public void activateProfile(View view) {
-//
-//    }
-//    public void showClassActivity(View view){
-//
-//    }
-//}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,11 +79,10 @@ public class FullscreenActivity extends Activity {
 
 
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.video1);
-        mediaPlayer.start(); // no need to call prepare(); create() does that for you
-
     }
     public void activateProfile(View view) {
+        Intent intent = new Intent(this, video1.class);
+        startActivity(intent);
 
     }
     public void showClassActivity(View buttonThing){

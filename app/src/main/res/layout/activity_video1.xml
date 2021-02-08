@@ -28,9 +28,10 @@
         android:fitsSystemWindows="true">
 
         <VideoView
-            android:id="@+id/videoView"
+            android:id="@+id/videoclip1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </FrameLayout>
 
 </FrameLayout>
