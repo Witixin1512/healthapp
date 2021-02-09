@@ -79,7 +79,7 @@ public class video1 extends Activity {
             super.onCreate(savedInstanceState);
 
             setContentView(R.layout.activity_video1);
-
+            playVideo(findViewById(videoclip1));
 
             mVisible = true;
 
@@ -92,10 +92,11 @@ public class video1 extends Activity {
      public void playVideo(View v) {
          VideoView vid = (VideoView)findViewById(videoclip1);
          MediaController m;
-         Uri u = Uri.parse("android.resource://com.witineo.healthapp/1800000");
+         Uri u = Uri.parse("android.resource://com.witineo.healthapp/" + R.raw.video1);
          m = new MediaController(this);
+         m.setAnchorView(vid);
          vid.setMediaController(m);
-         vid.setVideoURI(u);
+         vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
          vid.start();
      }
         @Override
