@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -92,7 +91,6 @@ public class video1 extends Activity {
      public void playVideo(View v) {
          VideoView vid = (VideoView)findViewById(videoclip1);
          MediaController m;
-         Uri u = Uri.parse("android.resource://com.witineo.healthapp/" + R.raw.video1);
          m = new MediaController(this);
          m.setAnchorView(vid);
          vid.setMediaController(m);
