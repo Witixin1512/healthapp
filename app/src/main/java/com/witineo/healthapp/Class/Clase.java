@@ -7,7 +7,6 @@ public class Clase {
     String nom;
     double temps;
     int nivell;
-    ArrayList<Clase> registre;
 
     public Clase (String name, double time, int tier) {
         this.nom = name;
@@ -23,4 +22,8 @@ public class Clase {
     //registre.add(Iniciacio);
 
     //for thing in
+
+    public static void launch(String activityName){
+        System.out.println("Starting activity " + activityName);
+    }
 }

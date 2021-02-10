@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import com.witineo.healthapp.Class.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * status bar and navigation/system bar) with user interaction.
  */
 public class Initial extends Activity {
+    launch("LauncherActivity");
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;

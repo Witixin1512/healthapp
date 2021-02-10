@@ -1,6 +1,7 @@
 package com.witineo.healthapp;
 
 import android.annotation.SuppressLint;
+import com.witineo.healthapp.Class.*;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -20,7 +21,7 @@ import static com.witineo.healthapp.R.id.videoclip1;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class video1 extends Activity {
-
+    launch("video1");
     private static final boolean AUTO_HIDE = true;
 
 
