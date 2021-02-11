@@ -4,15 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import com.witineo.healthapp.Class.*;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.witineo.healthapp.Class.Clase;
 
 
 /**
@@ -20,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
  * status bar and navigation/system bar) with user interaction.
  */
 public class Initial extends Activity {
-    launch("LauncherActivity");
+    public static void main (String[] args) {
+        Clase.launchMyActivity("Initial");
+    }
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;

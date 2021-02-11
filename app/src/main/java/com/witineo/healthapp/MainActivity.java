@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.witineo.healthapp.Class.Clase;
+
 public class MainActivity extends Activity {
-	launch("MainAcitivity");
+	public static void main (String[] args) {
+		Clase.launchMyActivity("MainActivity");
+	}
 }
