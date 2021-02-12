@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import com.witineo.healthapp.Class.Clase;
+import com.witineo.lib.Utilities;
 
 
 /**
@@ -16,9 +16,6 @@ import com.witineo.healthapp.Class.Clase;
  * status bar and navigation/system bar) with user interaction.
  */
 public class Initial extends Activity {
-    public static void main (String[] args) {
-        Clase.launchMyActivity("Initial");
-    }
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;
@@ -71,7 +68,7 @@ public class Initial extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Utilities.launchMyActivity("Initial");
         setContentView(R.layout.activity_main);
 
 

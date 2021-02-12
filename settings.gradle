@@ -1,2 +1,3 @@
-include ':app'
+include ':lib'
+include ':app', ':lib'
 rootProject.name = "My Application"

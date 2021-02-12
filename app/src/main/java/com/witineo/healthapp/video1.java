@@ -1,7 +1,7 @@
 package com.witineo.healthapp;
 
 import android.annotation.SuppressLint;
-import com.witineo.healthapp.Class.Clase;
+import com.witineo.lib.Utilities;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -77,7 +77,7 @@ public class video1 extends Activity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Clase.launchMyActivity("video1");
+            Utilities.launchMyActivity("video1");
             setContentView(R.layout.activity_video1);
             playVideo(findViewById(videoclip1));
 
