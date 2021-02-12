@@ -25,6 +25,7 @@
         <activity
             android:name=".video1"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_video1"
             android:theme="@drawable/ic_launcher_background">
         </activity>
