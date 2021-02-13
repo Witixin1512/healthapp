@@ -83,7 +83,7 @@ public class Initial extends Activity {
 
     }
     public void showClassActivity(View buttonThing){
-
+        Intent intent = new Intent(this, ClassList.class);
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

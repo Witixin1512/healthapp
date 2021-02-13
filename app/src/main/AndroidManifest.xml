@@ -15,20 +15,23 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@drawable/icon"
         android:label="Healthapp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@drawable/ic_launcher_background"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity
+            android:name=".ClassList"
+            android:label="@string/title_activity_class_list"
+            android:theme="@style/NoActionBar"></activity>
         <activity
             android:name=".video1"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="landscape"
             android:label="@string/title_activity_video1"
-            android:theme="@drawable/ic_launcher_background">
-        </activity>
+            android:screenOrientation="landscape"
+            android:theme="@drawable/ic_launcher_background"></activity>
         <activity
             android:name=".Initial"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -43,8 +46,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@drawable/download"
-            tools:ignore="WrongManifestParent">
-            </activity>
+            tools:ignore="WrongManifestParent"></activity>
     </application>
 
 </manifest>
