@@ -35,7 +35,7 @@
         <activity
             android:name=".Initial"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="Video Player"
+            android:label="Healthapp"
             android:theme="@drawable/ic_launcher_background">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
