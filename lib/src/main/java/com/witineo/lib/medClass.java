@@ -24,6 +24,6 @@ public class medClass extends Object {
         //registre.add(Iniciacio);
         System.out.println(Cremades.nom);
         //for thing in thingy
-        Utilities.launchMyActivity("Clase");
+        Utilities.launchMyActivity("medClass");
     }
 }
