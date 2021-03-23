@@ -70,7 +70,7 @@ public class Initial extends Activity {
         super.onCreate(savedInstanceState);
         Utilities.launchMyActivity("Initial");
         setContentView(R.layout.activity_main);
-        //Holaa
+
 
         mVisible = true;
 
