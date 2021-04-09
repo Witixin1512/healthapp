@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import com.witineo.lib.Utilities;
 
-public class medClass extends Object {
-    private final List<medClass> reg;
+
+public class MedClass extends Object {
+    public static final List<MedClass> reg = null;
+    public static final List<String> completedClasses = null;
     String nom;
-    double temps;
+    int temps;
     int nivell;
 
-    public medClass (String name, double time, int tier) {
+    public MedClass (String name, int time, int tier) {
         this.nom = name;
         this.temps = time;
         this.nivell = tier;
-        reg.add(this);
 
+        reg.add((MedClass) Utilities.getClassFromName(name));
     }
     public static int getVideoTime(){
         return 10; // afegir posibilitat d'extreure info d'un mp4?
     }
     public static void main(String[] args){
-        medClass Cremades = new medClass("Cremades", 10, 1);
-        medClass Iniciacio = new medClass("Explicació", 10.58, 0 );
+        MedClass Cremades = new MedClass("Cremades", 10, 1);
+        MedClass Iniciacio = new MedClass("Explicació", 10, 0 );
         Utilities.launchMyActivity("medClass");
-        for (medClass class : reg){
-            System.out.println("Adding class: " + class.name);
-        }
     }
+
 }
