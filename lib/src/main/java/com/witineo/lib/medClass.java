@@ -5,6 +5,7 @@ import java.util.List;
 import com.witineo.lib.Utilities;
 
 public class medClass extends Object {
+    private final List<medClass> reg;
     String nom;
     double temps;
     int nivell;
@@ -13,6 +14,7 @@ public class medClass extends Object {
         this.nom = name;
         this.temps = time;
         this.nivell = tier;
+        reg.add(this);
 
     }
     public static int getVideoTime(){
@@ -21,9 +23,9 @@ public class medClass extends Object {
     public static void main(String[] args){
         medClass Cremades = new medClass("Cremades", 10, 1);
         medClass Iniciacio = new medClass("Explicació", 10.58, 0 );
-        //registre.add(Iniciacio);
-        System.out.println(Cremades.nom);
-        //for thing in thingy
         Utilities.launchMyActivity("medClass");
+        for (medClass class : reg){
+            System.out.println("Adding class: " + class.name);
+        }
     }
 }
