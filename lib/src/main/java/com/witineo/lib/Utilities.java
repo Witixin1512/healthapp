@@ -18,12 +18,23 @@ public class Utilities {
         }
         return null;
     }
-    public int getTimeEstimated(){
-            int output = 0;
+    public static double[] minsAndSecs(double secs){
+        double[] output = {0, 1};
+        return output;
+    }
+    public double getTimeCompleted(){
+            double output = 0;
             for (String s : MedClass.completedClasses) {
                 output += (getClassFromName(s).temps);
             }
+            //Returns in minuts
             return output;
         }
+    public static double getMillToSec(long millSec) {
+        double secs = millSec / 1000;
+        System.out.print(secs);
+        return secs;
     }
+
+}
 
