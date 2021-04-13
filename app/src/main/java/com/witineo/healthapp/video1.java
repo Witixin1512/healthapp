@@ -95,6 +95,7 @@ public class video1 extends Activity {
          m = new MediaController(this);
          m.setAnchorView(vid);
          vid.setMediaController(m);
+         
          vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
          vid.start();
      }

@@ -1,24 +1,22 @@
 package com.witineo.lib;
-import com.witineo.lib.medClass;
+import com.witineo.lib.MedClass;
 
 import java.util.List;
 
 public class Utilities {
     public static void main(String[] args){
-        System.out.println("Hello world");
     }
     public static void launchMyActivity(String activityName) {
         System.out.println("Starting activity " + activityName + " Activity");
     }
     public static MedClass getClassFromName(String name){
         for (int i = 0; i < MedClass.reg.toArray().length; i++){
-            List<MedClass> newThing = MedClass.reg;
-            for (MedClass class : newThing.toArray()){
-            if (class.name.matches(name)){
-                return class;
-            }
-            return null;
+            if (MedClass.reg.get(i).nom.matches(name)){
+                return (MedClass) MedClass.reg.get(i);
+                }
+
         }
+        return null;
     }
     public int getTimeEstimated(){
             int output = 0;
@@ -28,4 +26,4 @@ public class Utilities {
             return output;
         }
     }
-}
+
