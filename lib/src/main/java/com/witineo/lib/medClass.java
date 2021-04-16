@@ -1,30 +1,36 @@
 package com.witineo.lib;
 
-import android.media.MediaMetadataRetriever;
-
 import java.util.ArrayList;
 import java.util.List;
-import com.witineo.lib.Utilities;
 
 
 public class MedClass extends Object {
-    public static final List<MedClass> reg = null;
+    public static List<MedClass> reg = new ArrayList<MedClass>();
     public static final List<String> completedClasses = null;
+    public String res;
     String nom;
     double temps;
     int nivell;
 
     public MedClass (String name, String resLocation, int tier) {
-       // MediaMetadataRetriever retriever = new MediaMetadataRetriever();
-        //retriever.setDataSource(resLocation);
-        //String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-        //long timeInmillisec = Long.parseLong(time);
+        long timeInmillisec = 0;
         this.nom = name;
-        //this.temps = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
-        this.temps = 3.54;
+        this.temps = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
+        this.temps = 0;
+        this.res = resLocation;
         this.nivell = tier;
-
-        //reg.add((MedClass) Utilities.getClassFromName(name));
+    }
+    public void setTime(double time){
+        this.temps = time;
+    }
+    public double getTime(){
+        return this.temps;
+    }
+    public String getName(){
+        return this.nom;
+    }
+    public static void registerClass(MedClass m){
+        reg.add(m);
     }
     public static void main(String[] args){
         Utilities.launchMyActivity("medClass");
@@ -32,6 +38,9 @@ public class MedClass extends Object {
         MedClass Iniciacio = new MedClass("Explicació", "blank", 0 );
         MedClass Avici = new MedClass("Avici", "android.resource://com.witineo.healthapp/" + 180000,0 );
 
+        registerClass(Cremades);
+        registerClass(Iniciacio);
+        registerClass(Avici);
     }
 
 }
