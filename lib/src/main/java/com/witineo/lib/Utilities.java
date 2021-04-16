@@ -18,9 +18,12 @@ public class Utilities {
         }
         return null;
     }
-    public static double[] minsAndSecs(double secs){
-        double[] output = {0, 1};
-        return output;
+    public static double minsAndSecs(double secs){
+        secs = secs % 60;
+        double mins = Math.floor(secs / 60);
+        double x = mins + secs;
+        System.out.println(x);
+        return x;
     }
     public double getTimeCompleted(){
             double output = 0;
@@ -31,7 +34,7 @@ public class Utilities {
             return output;
         }
     public static double getMillToSec(long millSec) {
-        double secs = millSec / 1000;
+        double secs = (double)millSec / 1000;
         System.out.print(secs);
         return secs;
     }
