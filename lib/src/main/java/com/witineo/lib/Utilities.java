@@ -35,7 +35,6 @@ public class Utilities {
         }
     public static double getMillToSec(long millSec) {
         double secs = (double)millSec / 1000;
-        System.out.print(secs);
         return secs;
     }
 

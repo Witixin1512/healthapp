@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-//import com.witineo.lib.Utilities;
+
+import com.witineo.lib.Utilities;
 
 
 /**
@@ -68,10 +69,8 @@ public class Initial extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Utilities.launchMyActivity("Initial");
+        Utilities.launchMyActivity("Initial");
         setContentView(R.layout.activity_main);
-        //Holaa
-
         mVisible = true;
 
 
@@ -84,14 +83,11 @@ public class Initial extends Activity {
     }
     public void showClassActivity(View buttonThing){
         Intent intent = new Intent(this, ClassList.class);
+        startActivity(intent);
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
         delayedHide(100);
     }
 

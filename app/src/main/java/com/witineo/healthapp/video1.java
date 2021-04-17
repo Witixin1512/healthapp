@@ -88,15 +88,19 @@ public class video1 extends Activity {
             // while interacting with the UI.
             //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
         }
-     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
      public void playVideo(View v) {
          VideoView vid = (VideoView)findViewById(videoclip1);
-         MediaController m;
-         m = new MediaController(this);
+         MediaController m = new MediaController(this);
          m.setAnchorView(vid);
-         vid.setMediaController(m);
-         
-         vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
+         try {
+             vid.setMediaController(m);
+         }
+         catch (NullPointerException e) {
+             System.out.println("NPE");
+             vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
+             vid.start();
+         }
+
          vid.start();
      }
         @Override

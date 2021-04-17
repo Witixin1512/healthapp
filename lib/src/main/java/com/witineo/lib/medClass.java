@@ -13,9 +13,7 @@ public class MedClass extends Object {
     int nivell;
 
     public MedClass (String name, String resLocation, int tier) {
-        long timeInmillisec = 0;
         this.nom = name;
-        this.temps = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
         this.temps = 0;
         this.res = resLocation;
         this.nivell = tier;
@@ -33,7 +31,7 @@ public class MedClass extends Object {
         reg.add(m);
     }
     public static void main(String[] args){
-        Utilities.launchMyActivity("medClass");
+        Utilities.launchMyActivity("MedClass");
         MedClass Cremades = new MedClass("Cremades", "blank", 1);
         MedClass Iniciacio = new MedClass("Explicació", "blank", 0 );
         MedClass Avici = new MedClass("Avici", "android.resource://com.witineo.healthapp/" + 180000,0 );
