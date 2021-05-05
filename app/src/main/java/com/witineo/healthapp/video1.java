@@ -79,30 +79,8 @@ public class video1 extends Activity {
             super.onCreate(savedInstanceState);
             Utilities.launchMyActivity("video1");
             setContentView(R.layout.activity_video1);
-            playVideo(findViewById(videoclip1));
-
             mVisible = true;
-
-            // Upon interacting with UI controls, delay any scheduled hide()
-            // operations to prevent the jarring behavior of controls going away
-            // while interacting with the UI.
-            //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
         }
-     public void playVideo(View v) {
-         VideoView vid = (VideoView)findViewById(videoclip1);
-         MediaController m = new MediaController(this);
-         m.setAnchorView(vid);
-         try {
-             vid.setMediaController(m);
-         }
-         catch (NullPointerException e) {
-             System.out.println("NPE");
-             vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
-             vid.start();
-         }
-
-         vid.start();
-     }
         @Override
         protected void onPostCreate(Bundle savedInstanceState) {
             super.onPostCreate(savedInstanceState);
