@@ -1,5 +1,6 @@
 package com.witineo.healthapp;
 
+import android.app.Activity;
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 
@@ -15,7 +16,7 @@ import android.view.View;
 
 import java.util.List;
 
-public class ClassList extends AppCompatActivity {
+public class ClassList extends Activity {
     List<MedClass> list = MedClass.reg;
 
     @Override
@@ -23,8 +24,6 @@ public class ClassList extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(getTitle());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

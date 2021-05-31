@@ -19,7 +19,6 @@ import androidx.annotation.RequiresApi;
 import static com.witineo.healthapp.R.id.videoclip1;
 
 
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class video1 extends Activity {
 
     private static final boolean AUTO_HIDE = true;
@@ -80,6 +79,23 @@ public class video1 extends Activity {
             Utilities.launchMyActivity("video1");
             setContentView(R.layout.activity_video1);
             mVisible = true;
+            playVideo(findViewById(videoclip1));
+        }
+        public void playVideo(View view){
+            VideoView vid =  (VideoView) view;
+            MediaController m = new MediaController(this);
+            m.setAnchorView(vid);
+            try {
+                vid.setMediaController(m);
+                System.out.println("UGH");
+                vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
+                vid.start();
+            }
+            catch (NullPointerException e) {
+                System.out.println("NPE");
+                vid.setVideoPath("android.resource://com.witineo.healthapp/" + R.raw.video1);
+                vid.start();
+            }
         }
         @Override
         protected void onPostCreate(Bundle savedInstanceState) {
