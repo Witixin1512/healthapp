@@ -10,9 +10,9 @@ public class Utilities {
         System.out.println("Starting activity " + activityName + " Activity");
     }
     public static MedClass getClassFromName(String name){
-        for (int i = 0; i < MedClass.reg.toArray().length; i++){
-            if (MedClass.reg.get(i).nom.matches(name)){
-                return (MedClass) MedClass.reg.get(i);
+        for (int i = 0; i < MedClass.getClassRegistry().toArray().length; i++){
+            if (MedClass.getClassRegistry().get(i).nom.matches(name)){
+                return (MedClass) MedClass.getClassRegistry().get(i);
                 }
 
         }
@@ -27,7 +27,7 @@ public class Utilities {
     }
     public double getTimeCompleted(){
             double output = 0;
-            for (String s : MedClass.completedClasses) {
+            for (String s : MedClass.getCompletedStringClasses()) {
                 output += (getClassFromName(s).temps);
             }
             //Returns in minuts
