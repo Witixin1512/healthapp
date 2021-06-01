@@ -2,6 +2,7 @@ package com.witineo.healthapp;
 
 import android.app.Activity;
 import android.media.MediaMetadataRetriever;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -9,6 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.witineo.lib.MedClass;
 import com.witineo.lib.Utilities;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -19,6 +21,7 @@ import java.util.List;
 public class ClassList extends Activity {
     List<MedClass> list = MedClass.reg;
 
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
