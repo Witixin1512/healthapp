@@ -5,8 +5,8 @@ import java.util.List;
 
 
 public class MedClass extends Object {
-    public static List<MedClass> reg = new ArrayList<MedClass>();
-    public static final List<String> completedClasses = null;
+    private static List<MedClass> reg = new ArrayList<MedClass>();
+    private static final List<String> completedClasses = new ArrayList<String>();
     public String res;
     String nom;
     double temps;
@@ -17,6 +17,15 @@ public class MedClass extends Object {
         this.temps = 0;
         this.res = resLocation;
         this.nivell = tier;
+        if (!(resLocation == null)) {
+            registerClass(this);
+        }
+    }
+    public static List<MedClass> getClassRegistry() {
+        return reg;
+    }
+    public static List<String> getCompletedStringClasses(){
+        return completedClasses;
     }
     public void setTime(double time){
         this.temps = time;
@@ -29,16 +38,14 @@ public class MedClass extends Object {
     }
     public static void registerClass(MedClass m){
         reg.add(m);
+        System.out.println("Registering class: "+ m.getName());
     }
     public static void main(String[] args){
         Utilities.launchMyActivity("MedClass");
-        MedClass Cremades = new MedClass("Cremades", "blank", 1);
-        MedClass Iniciacio = new MedClass("Explicació", "blank", 0 );
+        MedClass Cremades = new MedClass("Cremades", null, 1);
+        MedClass Iniciacio = new MedClass("Explicació", null, 0 );
         MedClass Avici = new MedClass("Avici", "android.resource://com.witineo.healthapp/" + 180000,0 );
 
-        registerClass(Cremades);
-        registerClass(Iniciacio);
-        registerClass(Avici);
     }
 
 }
