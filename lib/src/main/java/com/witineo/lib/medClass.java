@@ -17,9 +17,15 @@ public class MedClass extends Object {
         this.temps = 0;
         this.res = resLocation;
         this.nivell = tier;
-        if (!(resLocation == null)) {
+        if (this.isReadyToRegister()){
             registerClass(this);
         }
+    }
+    public boolean isReadyToRegister(){
+        if (this.res == null || this.nivell < 0 || this.nom == null){
+            return false;
+        }
+        return true;
     }
     public static List<MedClass> getClassRegistry() {
         return reg;
