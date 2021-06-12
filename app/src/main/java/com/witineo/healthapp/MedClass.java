@@ -41,7 +41,7 @@ public class MedClass extends Object {
     public static double getFullTime(){
         double output = 0.0;
         for (String s : completedClasses){
-            output += Utils.getClassFromName(s).getTime();
+            output += getClassFromName(s).getTime();
         }
         return output;
     }
@@ -67,6 +67,15 @@ public class MedClass extends Object {
             }
             System.out.println("Registering class: " + classToRegister.getName());
         }
+    }
+    public static MedClass getClassFromName(String name){
+        for (int i = 0; i < reg.toArray().length; i++){
+            if (reg.get(i).nom.matches(name)){
+                return (MedClass) reg.get(i);
+            }
+
+        }
+        return null;
     }
     public static void main(String[] args){
         Utils.launchMyActivity("MedClass");
