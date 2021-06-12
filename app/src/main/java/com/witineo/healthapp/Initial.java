@@ -77,7 +77,7 @@ public class Initial extends Activity {
 
     }
     public void activateProfile(View view) {
-        Intent intent = new Intent(this, video1.class);
+        Intent intent = new Intent(this, Perfil.class);
         startActivity(intent);
 
     }

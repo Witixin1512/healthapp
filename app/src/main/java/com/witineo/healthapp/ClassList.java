@@ -19,7 +19,6 @@ import android.view.View;
 import java.util.List;
 
 public class ClassList extends Activity {
-    List<MedClass> list = MedClass.getClassRegistry();
 
     @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
     @Override
@@ -36,19 +35,7 @@ public class ClassList extends Activity {
                System.out.println("yeet");
             }
         });
-        for (MedClass clas : list){
-            System.out.println("Loaded class: " + clas.getName());
-            MediaMetadataRetriever retriever = new MediaMetadataRetriever();
-            if (clas.res != null){
-                retriever.setDataSource(clas.res);
-                String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-                long timeInmillisec = Long.parseLong(time);
-                double timeToSet = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
-                System.out.println(clas.getName() + " " + timeToSet);
-                clas.setTime(timeToSet);
-            }
 
         }
 
     }
-}

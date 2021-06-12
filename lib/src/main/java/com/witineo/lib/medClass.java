@@ -1,7 +1,12 @@
 package com.witineo.lib;
 
+import android.content.SharedPreferences;
+import android.media.MediaMetadataRetriever;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class MedClass extends Object {
@@ -36,15 +41,34 @@ public class MedClass extends Object {
     public void setTime(double time){
         this.temps = time;
     }
+    public static double getFullTime(){
+        double output = 0.0;
+        for (String s : completedClasses){
+            output += Utilities.getClassFromName(s).getTime();
+        }
+        return output;
+    }
     public double getTime(){
         return this.temps;
     }
     public String getName(){
         return this.nom;
     }
-    public static void registerClass(MedClass m){
-        reg.add(m);
-        System.out.println("Registering class: "+ m.getName());
+    public static void registerClass(MedClass classToRegister) {
+        reg.add(classToRegister);
+        if (classToRegister.res != null) {
+            System.out.println("Loaded class: " + classToRegister.getName());
+            MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+            if (classToRegister.res != null) {
+                retriever.setDataSource(classToRegister.res);
+                String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+                long timeInmillisec = Long.parseLong(time);
+                double timeToSet = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
+                System.out.println(classToRegister.getName() + " " + timeToSet);
+                classToRegister.setTime(timeToSet);
+            }
+            System.out.println("Registering class: " + classToRegister.getName());
+        }
     }
     public static void main(String[] args){
         Utilities.launchMyActivity("MedClass");
