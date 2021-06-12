@@ -23,7 +23,7 @@ public class MedClass extends Object {
         this.res = resLocation;
         this.nivell = tier;
         if (this.isReadyToRegister()){
-            registerClass(this);
+            this.registerClass();
         }
     }
     public boolean isReadyToRegister(){
@@ -54,7 +54,8 @@ public class MedClass extends Object {
     public String getName(){
         return this.nom;
     }
-    public static void registerClass(MedClass classToRegister) {
+    public void registerClass() {
+        MedClass classToRegister = this;
         reg.add(classToRegister);
         if (classToRegister.res != null) {
             System.out.println("Loaded class: " + classToRegister.getName());
