@@ -1,9 +1,6 @@
-package com.witineo.lib;
-import com.witineo.lib.MedClass;
+package com.witineo.healthapp;
 
-import java.util.List;
-
-public class Utilities {
+public class Utils {
     public static void main(String[] args){
     }
     public static void launchMyActivity(String activityName) {
@@ -13,7 +10,7 @@ public class Utilities {
         for (int i = 0; i < MedClass.getClassRegistry().toArray().length; i++){
             if (MedClass.getClassRegistry().get(i).nom.matches(name)){
                 return (MedClass) MedClass.getClassRegistry().get(i);
-                }
+            }
 
         }
         return null;
@@ -26,17 +23,15 @@ public class Utilities {
         return x;
     }
     public double getTimeCompleted(){
-            double output = 0;
-            for (String s : MedClass.getCompletedStringClasses()) {
-                output += (getClassFromName(s).temps);
-            }
-            //Returns in minuts
-            return output;
+        double output = 0;
+        for (String s : MedClass.getCompletedStringClasses()) {
+            output += (getClassFromName(s).temps);
         }
+        //Returns in minuts
+        return output;
+    }
     public static double getMillToSec(long millSec) {
         double secs = (double)millSec / 1000;
         return secs;
     }
-
 }
-

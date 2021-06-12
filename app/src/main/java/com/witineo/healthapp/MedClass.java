@@ -1,13 +1,9 @@
-package com.witineo.lib;
+package com.witineo.healthapp;
 
-import android.content.SharedPreferences;
 import android.media.MediaMetadataRetriever;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.Context.MODE_PRIVATE;
-
 
 public class MedClass extends Object {
     private static List<MedClass> reg = new ArrayList<MedClass>();
@@ -26,6 +22,7 @@ public class MedClass extends Object {
             this.registerClass();
         }
     }
+
     public boolean isReadyToRegister(){
         if (this.res == null || this.nivell < 0 || this.nom == null){
             return false;
@@ -44,7 +41,7 @@ public class MedClass extends Object {
     public static double getFullTime(){
         double output = 0.0;
         for (String s : completedClasses){
-            output += Utilities.getClassFromName(s).getTime();
+            output += Utils.getClassFromName(s).getTime();
         }
         return output;
     }
@@ -64,7 +61,7 @@ public class MedClass extends Object {
                 retriever.setDataSource(classToRegister.res);
                 String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
                 long timeInmillisec = Long.parseLong(time);
-                double timeToSet = Utilities.minsAndSecs(Utilities.getMillToSec(timeInmillisec));
+                double timeToSet = Utils.minsAndSecs(Utils.getMillToSec(timeInmillisec));
                 System.out.println(classToRegister.getName() + " " + timeToSet);
                 classToRegister.setTime(timeToSet);
             }
@@ -72,11 +69,10 @@ public class MedClass extends Object {
         }
     }
     public static void main(String[] args){
-        Utilities.launchMyActivity("MedClass");
+        Utils.launchMyActivity("MedClass");
         MedClass Cremades = new MedClass("Cremades", null, 1);
         MedClass Iniciacio = new MedClass("Explicació", null, 0 );
         MedClass Avici = new MedClass("Avici", "android.resource://com.witineo.healthapp/" + 180000,0 );
 
     }
-
 }

@@ -1,5 +1,2 @@
-include ':lib2'
-include ':lib'
-include ':app', ':lib'
-project(':lib2').projectDir = new File(rootDir, 'lib/')
+include ':app'
 rootProject.name = "My Application"

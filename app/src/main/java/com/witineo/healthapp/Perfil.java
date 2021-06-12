@@ -15,7 +15,7 @@ import java.util.Date;
 
 import android.widget.TextView;
 
-import com.witineo.lib.MedClass;
+import com.witineo.healthapp.MedClass;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

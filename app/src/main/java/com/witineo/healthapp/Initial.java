@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.witineo.lib.Utilities;
 
 
 /**
@@ -69,7 +68,7 @@ public class Initial extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utilities.launchMyActivity("Initial");
+        Utils.launchMyActivity("Initial");
         setContentView(R.layout.activity_main);
         mVisible = true;
 
