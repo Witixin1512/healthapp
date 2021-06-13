@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MedClass extends Object {
     private static List<MedClass> reg = new ArrayList<MedClass>();
-    private static final List<String> completedClasses = new ArrayList<String>();
+    private static List<String> completedClasses = new ArrayList<String>();
     public String res;
     String nom;
     double temps;
@@ -35,6 +35,9 @@ public class MedClass extends Object {
     public static List<String> getCompletedStringClasses(){
         return completedClasses;
     }
+    public static void completeClass(MedClass c){
+        completedClasses.add(c.getName());
+    }
     public void setTime(double time){
         this.temps = time;
     }
@@ -59,18 +62,17 @@ public class MedClass extends Object {
             MediaMetadataRetriever retriever = new MediaMetadataRetriever();
             if (classToRegister.res != null) {
                 retriever.setDataSource(classToRegister.res);
-                String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-                long timeInmillisec = Long.parseLong(time);
+                long timeInmillisec = Long.parseLong(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
                 double timeToSet = Utils.minsAndSecs(Utils.getMillToSec(timeInmillisec));
                 System.out.println(classToRegister.getName() + " " + timeToSet);
                 classToRegister.setTime(timeToSet);
             }
-            System.out.println("Registering class: " + classToRegister.getName());
+            System.out.println("Registering MedClass: " + classToRegister.getName());
         }
     }
-    public static MedClass getClassFromName(String name){
-        for (int i = 0; i < reg.toArray().length; i++){
-            if (reg.get(i).nom.matches(name)){
+    public static MedClass getClassFromName(String toMatch){
+        for (int i = 0; i < reg.size(); i++){
+            if (reg.get(i).nom.matches(toMatch)){
                 return (MedClass) reg.get(i);
             }
 
