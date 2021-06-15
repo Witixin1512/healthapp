@@ -74,6 +74,7 @@ public class Perfil extends Activity {
                 for(int i = 4; i < date.toString().length(); i++){
                     s.append(date.toString().toCharArray()[i]);
                 }
+                date = s.toString();
                 prefsEditor.putString("saveddate", date);
                 prefsEditor.commit();
                 this.dateStarted.setText(date);
