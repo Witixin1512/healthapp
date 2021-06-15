@@ -32,7 +32,7 @@ public class Perfil extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Utils.launchMyActivity("Perfil");
         setContentView(R.layout.activity_perfil);
         updateAllValues();
         mVisible = true;
@@ -59,16 +59,16 @@ public class Perfil extends Activity {
         Date dat = Calendar.getInstance().getTime();
         SharedPreferences.Editor prefsEditor = pref.edit();
         String name = pref.getString("name", "Inserte su nombre aquí");
-        String date = pref.getString("saveddate", "01/01/1970");
-        if (name != "Inserte su nombre aquí"){
+        String date = pref.getString("saveddate", null);
+        if (name == "Inserte su nombre aquí"){
             this.name.setText(name);
         }
-            if (name == "Inserte su nombre aquí") {
+            if (name != "Inserte su nombre aquí") {
                 name = this.name.getText().toString();
                 prefsEditor.putString("name", name);
                 prefsEditor.commit();
             }
-            if (date == "01/01/1970"){
+            if (date == null){
                 StringBuilder s = new StringBuilder();
                 for(int i = 4; i < date.toString().length(); i++){
                     s.append(date.toString().toCharArray()[i]);
