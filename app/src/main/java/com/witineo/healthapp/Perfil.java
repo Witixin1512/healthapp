@@ -75,10 +75,11 @@ public class Perfil extends Activity {
                     s.append(date.toString().toCharArray()[i]);
                 }
                 date = s.toString();
+                System.out.println(date);
                 prefsEditor.putString("saveddate", date);
                 prefsEditor.commit();
-                this.dateStarted.setText(date);
             }
+         this.dateStarted.setText(pref.getString("saveddate", "01/01/1970"));
          this.classAmount.setText(String.valueOf(amount));
          this.totalTime.setText(time);
     }
