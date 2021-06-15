@@ -57,19 +57,18 @@ public class Perfil extends Activity {
         String time = String.valueOf(MedClass.getFullTime());
         int amount = MedClass.getCompletedStringClasses().size();
         Date dat = Calendar.getInstance().getTime();
-        System.out.println("Todays date = " + dat.toString());
         SharedPreferences.Editor prefsEditor = pref.edit();
-        String name = pref.getString("name", "");
-        String date = pref.getString("saveddate", "");
-        if (name != null){
+        String name = pref.getString("name", "Inserte su nombre aquí");
+        String date = pref.getString("saveddate", "01/01/1970");
+        if (name != "Inserte su nombre aquí"){
             this.name.setText(name);
         }
-            if (name == null) {
+            if (name == "Inserte su nombre aquí") {
                 name = this.name.getText().toString();
                 prefsEditor.putString("name", name);
                 prefsEditor.commit();
             }
-            if (date == null){
+            if (date == "01/01/1970"){
                 StringBuilder s = new StringBuilder();
                 for(int i = 4; i < date.toString().length(); i++){
                     s.append(date.toString().toCharArray()[i]);
