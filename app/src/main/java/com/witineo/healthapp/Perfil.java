@@ -70,7 +70,7 @@ public class Perfil extends Activity {
             }
             if (date == null){
                 StringBuilder s = new StringBuilder();
-                for(int i = 4; i < dat.toString().length(); i++){
+                for(int i = 4; i < 16; i++){
                     s.append(dat.toString().toCharArray()[i]);
                 }
                 date = s.toString();
