@@ -3,79 +3,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainThin"
+    android:background="@drawable/download"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+
+    <Button
         android:id="@+id/profile"
-        android:layout_width="150dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:background="@drawable/prova_boto01"
+        android:layout_width="344dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="70dp"
+        android:angle="45"
+        android:background="@drawable/custom_button01"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="8sp"
         android:onClick="activateProfile"
+        android:text="@string/el_meu_perfil"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#40FFFFFF"
+        android:textSize="24sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/clase"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" >
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="115dp"
-            android:layout_height="15dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="18dp"
-            android:lineSpacingExtra="8sp"
-            android:text="El meu perfil"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            app:layout_constraintBottom_toBottomOf="@+id/profile"
-            app:layout_constraintEnd_toEndOf="@+id/profile"
-            app:layout_constraintStart_toStartOf="@+id/profile" />
-    </RelativeLayout>
-
-    <RelativeLayout
+    <Button
         android:id="@+id/clase"
-        android:layout_width="150dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:background="@drawable/prova_boto02"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/custom_button01"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="showClassActivity"
+        android:text="@string/clases"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#40FFFFFF"
+        android:textSize="24sp"
+        android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" >
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="115dp"
-            android:layout_height="15dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="18dp"
-            android:text="Classes"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/clase"
-            app:layout_constraintEnd_toEndOf="@+id/clase"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="@+id/clase" />
-    </RelativeLayout>
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
@@ -87,16 +75,25 @@
         android:text="@string/healthapp"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textColor="#4DFFFFFF"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.299" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="334dp"
+        android:layout_height="85dp"
+        android:accessibilityTraversalAfter="@integer/config_navAnimTime"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:srcCompat="@drawable/try2_headline"
+        tools:layout_editor_absoluteX="44dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
