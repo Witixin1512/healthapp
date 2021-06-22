@@ -1,20 +1,15 @@
 package com.witineo.healthapp;
 
 import android.annotation.SuppressLint;
-import com.witineo.healthapp.Utils;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.VideoView;
 import android.widget.MediaController;
-
-import androidx.annotation.RequiresApi;
 
 import static com.witineo.healthapp.Initial.launchMyActivity;
 import static com.witineo.healthapp.R.id.videoclip1;
