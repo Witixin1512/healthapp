@@ -43,11 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:theme="@drawable/download"
-            tools:ignore="WrongManifestParent"></activity>
-        <activity android:name=".Perfil" android:label = "Perfil" android:theme = "@style/Widget.drawable.ic_launcher_background.ActionBar.Fullscreen"></activity>
     </application>
 
 </manifest>

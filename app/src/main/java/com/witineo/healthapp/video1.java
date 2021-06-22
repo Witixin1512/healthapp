@@ -16,6 +16,7 @@ import android.widget.MediaController;
 
 import androidx.annotation.RequiresApi;
 
+import static com.witineo.healthapp.Initial.launchMyActivity;
 import static com.witineo.healthapp.R.id.videoclip1;
 
 
@@ -76,7 +77,7 @@ public class video1 extends Activity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Utils.launchMyActivity("video1");
+            launchMyActivity("video1");
             setContentView(R.layout.activity_video1);
             mVisible = true;
             playVideo(findViewById(videoclip1));

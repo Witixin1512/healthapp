@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.witineo.healthapp.MedClass;
 
+import static com.witineo.healthapp.Initial.launchMyActivity;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -32,7 +34,7 @@ public class Perfil extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.launchMyActivity("Perfil");
+        launchMyActivity("Perfil");
         setContentView(R.layout.activity_perfil);
         updateAllValues();
         mVisible = true;

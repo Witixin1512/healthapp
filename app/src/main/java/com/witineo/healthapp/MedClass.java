@@ -5,6 +5,10 @@ import android.media.MediaMetadataRetriever;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.witineo.healthapp.Initial.getMillToSec;
+import static com.witineo.healthapp.Initial.launchMyActivity;
+import static com.witineo.healthapp.Initial.minsAndSecs;
+
 public class MedClass extends Object {
     private static List<MedClass> reg = new ArrayList<MedClass>();
     private static List<String> completedClasses = new ArrayList<String>();
@@ -63,7 +67,7 @@ public class MedClass extends Object {
             if (classToRegister.res != null) {
                 retriever.setDataSource(classToRegister.res);
                 long timeInmillisec = Long.parseLong(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
-                double timeToSet = Utils.minsAndSecs(Utils.getMillToSec(timeInmillisec));
+                double timeToSet = minsAndSecs(getMillToSec(timeInmillisec));
                 System.out.println(classToRegister.getName() + " " + timeToSet);
                 classToRegister.setTime(timeToSet);
             }
@@ -80,7 +84,7 @@ public class MedClass extends Object {
         return null;
     }
     public static void main(String[] args){
-        Utils.launchMyActivity("MedClass");
+        launchMyActivity("MedClass");
         MedClass Cremades = new MedClass("Cremades", null, 1);
         MedClass Iniciacio = new MedClass("Explicació", null, 0 );
         MedClass Avici = new MedClass("Avici", "android.resource://com.witineo.healthapp/" + 180000,0 );
