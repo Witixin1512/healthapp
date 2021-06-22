@@ -41,7 +41,7 @@ public class Perfil extends Activity {
     @Override
     protected void onPause(){
         super.onPause();
-        if (name.getText().toString() != null) {
+        if (name.getText().toString() != "Inserte su nombre aquí") {
             SharedPreferences pref = getPreferences(MODE_PRIVATE);
             SharedPreferences.Editor ed = pref.edit();
             ed.putString("name", name.getText().toString());
