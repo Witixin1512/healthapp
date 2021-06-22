@@ -49,6 +49,10 @@ public class Perfil extends Activity {
             ed.putString("name", name.getText().toString());
             ed.commit();
         }
+        SharedPreferences pref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = pref.edit();
+        ed.putString("date", this.dateStarted.getText().toString());
+        ed.commit();
     }
     public void updateAllValues() {
         this.totalTime = findViewById(R.id.time);
