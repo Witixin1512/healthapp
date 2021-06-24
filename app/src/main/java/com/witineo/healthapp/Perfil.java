@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.witineo.healthapp.MedClass;
 
@@ -30,6 +32,8 @@ public class Perfil extends Activity {
     private TextView dateStarted;
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private Button btnperfil;
+    private TextView txtperfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +58,21 @@ public class Perfil extends Activity {
         ed.putString("date", this.dateStarted.getText().toString());
         ed.commit();
     }
+
+
+
+
+
+
+
+
     public void updateAllValues() {
         this.totalTime = findViewById(R.id.time);
         this.classAmount = findViewById(R.id.classamount);
         this.dateStarted = findViewById(R.id.date);
         this.name = findViewById(R.id.editTextTextPersonName);
+        txtperfil = (TextView) findViewById(R.id.perfil_txttop);
+        btnperfil = (Button)findViewById(R.id.perfil_btn01);
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
         String time = String.valueOf(MedClass.getFullTime());
         int amount = MedClass.getCompletedStringClasses().size();
@@ -66,6 +80,16 @@ public class Perfil extends Activity {
         SharedPreferences.Editor prefsEditor = pref.edit();
         String name = pref.getString("name", "Inserte su nombre aquí");
         String date = pref.getString("saveddate", null);
+        String hello = ("I'm Axel");
+        btnperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtperfil.setText(pref.getString("saveddate", "01/01/1970"));
+            }
+        });
+
+
+
         if (name == "Inserte su nombre aquí"){
             this.name.setText(name);
         }
@@ -88,6 +112,15 @@ public class Perfil extends Activity {
          this.classAmount.setText(String.valueOf(amount));
          this.totalTime.setText(time);
     }
+
+
+
+
+
+
+
+
+
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
