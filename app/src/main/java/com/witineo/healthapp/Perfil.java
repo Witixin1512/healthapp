@@ -81,6 +81,7 @@ public class Perfil extends Activity {
         String name = pref.getString("name", "Inserte su nombre aquí");
         String date = pref.getString("saveddate", null);
         String hello = ("I'm Axel");
+        //prova de btn 01
         btnperfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
