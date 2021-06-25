@@ -5,6 +5,7 @@ import android.media.MediaMetadataRetriever;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.witineo.healthapp.Initial.getMillToSec;
 import static com.witineo.healthapp.Initial.launchMyActivity;
 import static com.witineo.healthapp.Initial.minsAndSecs;
@@ -39,9 +40,6 @@ public class MedClass extends Object {
     public static List<String> getCompletedStringClasses(){
         return completedClasses;
     }
-    public static void completeClass(MedClass c){
-        completedClasses.add(c.getName());
-    }
     public void setTime(double time){
         this.temps = time;
     }
@@ -61,18 +59,13 @@ public class MedClass extends Object {
     public void registerClass() {
         MedClass classToRegister = this;
         reg.add(classToRegister);
-        if (classToRegister.res != null) {
             System.out.println("Loaded class: " + classToRegister.getName());
             MediaMetadataRetriever retriever = new MediaMetadataRetriever();
-            if (classToRegister.res != null) {
-                retriever.setDataSource(classToRegister.res);
-                long timeInmillisec = Long.parseLong(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
-                double timeToSet = minsAndSecs(getMillToSec(timeInmillisec));
-                System.out.println(classToRegister.getName() + " " + timeToSet);
-                classToRegister.setTime(timeToSet);
-            }
-            System.out.println("Registering MedClass: " + classToRegister.getName());
-        }
+            retriever.setDataSource(classToRegister.res);
+            long timeInmillisec = Long.parseLong(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
+            double timeToSet = minsAndSecs(getMillToSec(timeInmillisec));
+            System.out.println(classToRegister.getName() + " " + timeToSet);
+            classToRegister.setTime(timeToSet);
     }
     public static MedClass getClassFromName(String toMatch){
         for (int i = 0; i < reg.size(); i++){

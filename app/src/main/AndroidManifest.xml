@@ -31,7 +31,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_video1"
             android:screenOrientation="landscape"
-            android:theme="@drawable/ic_launcher_background"></activity>
+            android:theme="@drawable/ic_launcher_background" />
         <activity
             android:name=".Initial"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -39,10 +39,14 @@
             android:theme="@drawable/ic_launcher_background">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Perfil" android:label = "Perfil" android:theme = "@style/Widget.drawable.ic_launcher_background.ActionBar.Fullscreen"></activity>
+        <activity
+            android:name=".Perfil"
+            android:label="Perfil"
+            android:theme="@style/Widget.drawable.ic_launcher_background.ActionBar.Fullscreen" />
     </application>
 
 </manifest>
