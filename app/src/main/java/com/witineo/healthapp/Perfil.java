@@ -32,6 +32,7 @@ public class Perfil extends Activity {
     private TextView dateStarted;
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static String DEFNAMEVALUE = "Inserte su nombre aquí";
     private Button btnperfil;
     private TextView txtperfil;
 
@@ -40,65 +41,48 @@ public class Perfil extends Activity {
         super.onCreate(savedInstanceState);
         launchMyActivity("Perfil");
         setContentView(R.layout.activity_perfil);
-        updateAllValues();
         mVisible = true;
 
+        btnperfil = findViewById(R.id.perfil_btn01);
+        //String hello = ("I'm Axel");
+        btnperfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtperfil.setText(myPrefs().getString("saveddate", "01/01/1970"));
+            }
+        });
     }
     @Override
-    protected void onPause(){
-        super.onPause();
+    protected void onStart(){
+        super.onStart();
+        updateAllValues();
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        System.out.println("Current saved name is: "  + name.getText().toString());
         if (name.getText().toString() != "Inserte su nombre aquí") {
             SharedPreferences pref = getPreferences(MODE_PRIVATE);
             SharedPreferences.Editor ed = pref.edit();
             ed.putString("name", name.getText().toString());
-            ed.commit();
+            ed.apply();
         }
-        SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor ed = pref.edit();
-        ed.putString("date", this.dateStarted.getText().toString());
-        ed.commit();
     }
-
-
-
-
-
-
-
 
     public void updateAllValues() {
         this.totalTime = findViewById(R.id.time);
         this.classAmount = findViewById(R.id.classamount);
         this.dateStarted = findViewById(R.id.date);
         this.name = findViewById(R.id.editTextTextPersonName);
-        txtperfil = (TextView) findViewById(R.id.perfil_txttop);
-        btnperfil = (Button)findViewById(R.id.perfil_btn01);
+
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
-        String time = String.valueOf(MedClass.getFullTime());
-        int amount = MedClass.getCompletedStringClasses().size();
         Date dat = Calendar.getInstance().getTime();
         SharedPreferences.Editor prefsEditor = pref.edit();
+
         String name = pref.getString("name", "Inserte su nombre aquí");
         String date = pref.getString("saveddate", null);
-        String hello = ("I'm Axel");
-        //prova de btn 01
-        btnperfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtperfil.setText(pref.getString("saveddate", "01/01/1970"));
-            }
-        });
-
-
-
-        if (name == "Inserte su nombre aquí"){
-            this.name.setText(name);
-        }
-            if (name != "Inserte su nombre aquí") {
-                name = this.name.getText().toString();
-                prefsEditor.putString("name", name);
-                prefsEditor.commit();
-            }
+        int amount = MedClass.getCompletedStringClasses().size();
+        String time = String.valueOf(MedClass.getFullTime());
             if (date == null){
                 StringBuilder s = new StringBuilder();
                 for(int i = 4; i < 16; i++){
@@ -107,21 +91,20 @@ public class Perfil extends Activity {
                 date = s.toString();
                 System.out.println(date);
                 prefsEditor.putString("saveddate", date);
-                prefsEditor.commit();
+                prefsEditor.apply();
             }
+         this.name.setText(name);
          this.dateStarted.setText(pref.getString("saveddate", "01/01/1970"));
          this.classAmount.setText(String.valueOf(amount));
          this.totalTime.setText(time);
     }
 
-
-
-
-
-
-
-
-
+    private SharedPreferences myPrefs(){
+        return getPreferences(MODE_PRIVATE);
+    }
+    private  SharedPreferences.Editor editor(){
+        return myPrefs().edit();
+    }
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
