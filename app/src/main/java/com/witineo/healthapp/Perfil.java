@@ -42,9 +42,8 @@ public class Perfil extends Activity {
         launchMyActivity("Perfil");
         setContentView(R.layout.activity_perfil);
         mVisible = true;
-
         btnperfil = findViewById(R.id.perfil_btn01);
-        //String hello = ("I'm Axel");
+        txtperfil = findViewById(R.id.perfil_txttop);
         btnperfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
