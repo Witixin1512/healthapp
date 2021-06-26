@@ -22,11 +22,11 @@
         android:textColor="#40FFFFFF"
         android:textSize="24sp"
         android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="@+id/clase"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@+id/guia_botbtnperfil"
+        app:layout_constraintDimensionRatio=":1"
         app:layout_constraintEnd_toEndOf="@id/guia_dretageneral"
         app:layout_constraintStart_toStartOf="@id/guia_esquerrageneral"
-        app:layout_constraintTop_toTopOf="@id/textView4" />
+        app:layout_constraintTop_toTopOf="@id/guia_topbtnperfil" />
 
     <Button
         android:id="@+id/clase"
@@ -41,11 +41,27 @@
         android:textColor="#40FFFFFF"
         android:textSize="24sp"
         android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="@+id/guia_botgeneral"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@+id/guia_botbtnclase"
+        app:layout_constraintDimensionRatio=":1"
         app:layout_constraintEnd_toEndOf="@id/guia_dretageneral"
         app:layout_constraintStart_toStartOf="@id/guia_esquerrageneral"
-        app:layout_constraintTop_toTopOf="@id/profile" />
+        app:layout_constraintTop_toTopOf="@id/guia_topbtnclase" />
+
+    <Button
+        android:id="@+id/main_btninfopersonal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/mian_btnmesinfosobrenosaltres"
+        android:text="SOBRE NOSALTRES"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#40FFFFFF"
+        android:textSize="10sp"
+        android:typeface="monospace"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guia_dretageneral"
+        app:layout_constraintStart_toStartOf="@id/guia_esquerrabtnmesinfo"
+        app:layout_constraintTop_toTopOf="@id/guia_topcontactes" />
 
     <TextView
         android:id="@+id/textView4"
@@ -59,17 +75,17 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="@id/profile"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@id/guia_bottetxtview"
+        app:layout_constraintDimensionRatio=":1"
         app:layout_constraintEnd_toEndOf="@id/guia_dretageneral"
         app:layout_constraintStart_toStartOf="@id/guia_esquerrageneral"
-        app:layout_constraintTop_toTopOf="@id/guia_topgeneral"
+        app:layout_constraintTop_toTopOf="@id/guia_toptxtview"
         app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <TextView
         android:id="@+id/txtview_contactans"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="177dp"
+        android:layout_height="76dp"
         android:text="Contactans:
                       elnostretdr@gmail.com
                       +34 657 34 38 57                     "
@@ -117,17 +133,53 @@
         app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guia_topgeneral"
+        android:id="@+id/guia_toptxtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.26" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guia_botgeneral"
+        android:id="@+id/guia_bottetxtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_topbtnperfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_botbtnperfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_topbtnclase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_botbtnclase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_esquerrabtnmesinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
 
