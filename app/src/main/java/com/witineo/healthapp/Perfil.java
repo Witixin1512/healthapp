@@ -33,8 +33,10 @@ public class Perfil extends Activity {
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static String DEFNAMEVALUE = "Inserte su nombre aquí";
-    private Button btnperfil;
+    private Button btnperfil01;
     private TextView txtperfil;
+    private Button btnperfil02;
+    private Button btnperfil03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +44,32 @@ public class Perfil extends Activity {
         launchMyActivity("Perfil");
         setContentView(R.layout.activity_perfil);
         mVisible = true;
-        btnperfil = findViewById(R.id.perfil_btn01);
+        btnperfil01 = findViewById(R.id.perfil_btn01);
+        btnperfil02 = findViewById(R.id.perfil_btn02);
+        btnperfil03 = findViewById(R.id.perfil_btn03);
         txtperfil = findViewById(R.id.perfil_txttop);
-        btnperfil.setOnClickListener(new View.OnClickListener() {
+
+        //DATE
+        btnperfil01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtperfil.setText(myPrefs().getString("saveddate", "01/01/1970"));
+            }
+        });
+
+        //TIME
+        btnperfil02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtperfil.setText(String.valueOf(MedClass.getFullTime()));
+            }
+        });
+
+        //CLASS MOUNT
+        btnperfil03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtperfil.setText(String.valueOf(MedClass.getCompletedStringClasses().size()));
             }
         });
     }
