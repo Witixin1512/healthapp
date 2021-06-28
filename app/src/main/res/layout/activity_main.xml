@@ -8,6 +8,29 @@
     android:background="@drawable/background_4">
 
     <Button
+        android:id="@+id/emergenci"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:angle="45"
+        android:background="@drawable/background_btnemergeci"
+        android:fontFamily="sans-serif-condensed"
+        android:lineSpacingExtra="8sp"
+        android:onClick="SOS"
+        android:text="S     O    S"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#40FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/guia_botbtnemergencia"
+        app:layout_constraintDimensionRatio=":1"
+        app:layout_constraintEnd_toEndOf="@id/guia_dretageneral"
+        app:layout_constraintStart_toStartOf="@id/guia_esquerrageneral"
+        app:layout_constraintTop_toTopOf="@id/guia_topbtnemergencia" />
+
+
+    <Button
         android:id="@+id/profile"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -109,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.02" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_dretacontactes"
@@ -151,28 +174,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_botbtnperfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_topbtnemergencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia_botbtnemergencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_topbtnclase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.68" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guia_botbtnclase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.78" />
 
 
     <androidx.constraintlayout.widget.Guideline

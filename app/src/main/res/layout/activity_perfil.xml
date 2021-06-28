@@ -72,28 +72,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.3" />
+                app:layout_constraintGuide_percent="0.27" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guia_botfila01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.5" />
+                app:layout_constraintGuide_percent="0.47" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guia_topfila02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.6" />
+                app:layout_constraintGuide_percent="0.57" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guia_botfila02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.8" />
+                app:layout_constraintGuide_percent="0.77" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Horitzontal1"
@@ -133,7 +133,7 @@
                     app:layout_constraintStart_toStartOf="@id/guia_05"
                     app:layout_constraintEnd_toEndOf="@id/guia_06"
                     android:background="@drawable/menuperfil_bocs"
-                    android:text="Class mount"
+                    android:text="Class Amount"
                     android:textAlignment="center"
                     android:textColor="#80000000" />
 
